@@ -5,10 +5,12 @@ loadEnv(process.env.NODE_ENV || 'development', process.cwd())
 module.exports = defineConfig({
   projectConfig: {
     databaseUrl: process.env.DATABASE_URL,
-    databaseDriverOptions: {
-      connection: {
-        ssl: { rejectUnauthorized: false },
-      },
+    databaseDriverOptions: 
+    {
+      
+      ssl: false,
+      sslmode: "disable",
+      
       pool: {
         min: 0,
         max: 5,
@@ -27,5 +29,8 @@ module.exports = defineConfig({
       jwtSecret: process.env.JWT_SECRET || "supersecret",
       cookieSecret: process.env.COOKIE_SECRET || "supersecret",
     }
+  },
+  admin: {
+    path: "/dashboard"
   }
 })
