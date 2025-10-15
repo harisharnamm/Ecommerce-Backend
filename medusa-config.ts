@@ -8,9 +8,6 @@ module.exports = defineConfig({
     databaseDriverOptions: {
       connection: {
         ssl: { rejectUnauthorized: false },
-        statement_timeout: 30000, // 30 seconds
-        query_timeout: 30000,
-        connectionTimeoutMillis: 10000, // 10 seconds
       },
       pool: {
         min: 0,
